@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+    <!--    <bean id = "orderService2" class="com.piyus.OrderService"/>-->
+
+<!--    <bean-->
+<!--            id = "paymentService"-->
+<!--            name="paymentBean"-->
+<!--            class="com.piyus.PaymentService"-->
+<!--    >-->
+<!--        <constructor-arg index="0" value="UPI" name="type"/>-->
+<!--        <constructor-arg index="1" value="5" name="retryCount"/>-->
+<!--    </bean>-->
+
+
+<!--    <bean-->
+<!--            id = "orderService"-->
+<!--            name="orderBean, orderBean2"-->
+<!--            class="com.piyus.OrderService"-->
+<!--    >-->
+<!--        <property name="paymentService" ref = "paymentService"/>-->
+<!--    </bean>-->
+
+
+<!--    <bean-->
+<!--            id = "orderService"-->
+<!--            name="orderBean, orderBean2"-->
+<!--            class="com.piyus.OrderService"-->
+<!--    >-->
+<!--        <constructor-arg ref="paymentService"/>-->
+<!--    </bean>-->
+
+    <bean id="whatsAppNotification" class="com.piyus.notification.WhatsAppNotification"/>
+    <bean id="smsNotification" class="com.piyus.notification.Sms"/>
+
+    <bean id="orderService" class="com.piyus.OrderService">
+        <constructor-arg ref = "whatsAppNotification"/>
+    </bean>
+
+    <bean
+            id="userService"
+            class="com.piyus.UserService"
+
+
+    >
+        <constructor-arg name = "usernames">
+            <list>
+                <value>Naveen</value>
+                <value>piyush</value>
+                <value>chotu</value>
+                <value>Singh Saab</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+
+    <bean
+            id="roboService"
+            class="com.piyus.RoboService"
+            init-method="init"
+            destroy-method="destroy"
+            scope="prototype"
+    />
+
+
+
+
+</beans>
