@@ -1,13 +1,9 @@
-package com.piyus.springBootAopPracticalDemo.controller;
+package com.piyus.springBootAopPointCuts.controller;
 
 
-import com.piyus.springBootAopPracticalDemo.dto.Student;
-import com.piyus.springBootAopPracticalDemo.service.StudentService;
-import com.piyus.springBootAopPracticalDemo.service.StudentServiceIterface;
-import org.aspectj.lang.annotation.After;
+import com.piyus.springBootAopPointCuts.dto.Student;
+import com.piyus.springBootAopPointCuts.service.StudentServiceIterface;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

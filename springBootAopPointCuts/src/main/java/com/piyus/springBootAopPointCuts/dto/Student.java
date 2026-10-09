@@ -1,4 +1,4 @@
-package com.piyus.springBootAopPracticalDemo.dto;
+package com.piyus.springBootAopPointCuts.dto;
 
 import jdk.jfr.Timestamp;
 

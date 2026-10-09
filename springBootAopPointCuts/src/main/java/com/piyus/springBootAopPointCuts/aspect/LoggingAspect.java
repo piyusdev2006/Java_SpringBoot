@@ -1,4 +1,4 @@
-package com.piyus.springBootAopPracticalDemo.aspect;
+package com.piyus.springBootAopPointCuts.aspect;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
@@ -9,14 +9,14 @@ import org.springframework.stereotype.Component;
 public class LoggingAspect {
 
     // interceptor Method using {"execution"} designator
-//    @Before("execution(* com.piyus.springBootAopPracticalDemo.service.StudentService.* (..))")
+//    @Before("execution(* com.piyus.springBootAopPointCuts.service.StudentService.* (..))")
 //    public void logBeforeMethod(){
 //
 //        System.out.println("Method Intercepted");
 //    }
 
     // interceptor Method using {"within"} designator
-//    @Before("within(com.piyus.springBootAopPracticalDemo.service.StudentService)")
+//    @Before("within(com.piyus.springBootAopPointCuts.service.StudentService)")
 //    public void logBeforeMethod(){
 //
 //        System.out.println("Method Intercepted");
@@ -47,7 +47,7 @@ public class LoggingAspect {
 
 
 
-    @Before("within(com.piyus.springBootAopPracticalDemo.service..*)" +
+    @Before("within(com.piyus.springBootAopPointCuts.service..*)" +
             "&&" + "execution(public * *(..))" )
     public void logBeforeMethod2(){
 
@@ -56,7 +56,7 @@ public class LoggingAspect {
 
 
     // Named PointCuts
-    @Pointcut("within(com.piyus.springBootAopPracticalDemo.service..*)" +
+    @Pointcut("within(com.piyus.springBootAopPointCuts.service..*)" +
             "&&" + "execution(public * *(..))")
     public void logPointCut(){
         // empty body always
@@ -69,7 +69,7 @@ public class LoggingAspect {
     }
 
     // using points from generic pointscuts class "ApplicationPointCuts"
-    @Before("com.piyus.springBootAopPracticalDemo.aspect.ApplicationPointCuts.ApplicationPointcuts.publicServiceMethod()")
+    @Before("com.piyus.springBootAopPointCuts.aspect.ApplicationPointCuts.ApplicationPointcuts.publicServiceMethod()")
     public void logBeforeMethod4(){
 
         System.out.println("Method Intercepted");
@@ -81,9 +81,9 @@ public class LoggingAspect {
     }
 
 
-//    @Before("execution(com.piyus.springBootAopPracticalDemo.dto.Student " +
-//            "com.piyus.springBootAopPracticalDemo.service.StudentService.createStudent("
-//            + "com.piyus.springBootAopPracticalDemo.dto.Student))")
+//    @Before("execution(com.piyus.springBootAopPointCuts.dto.Student " +
+//            "com.piyus.springBootAopPointCuts.service.StudentService.createStudent("
+//            + "com.piyus.springBootAopPointCuts.dto.Student))")
 //    public void logBeforeMethod2(){
 //        System.out.println("Method Intercepted");
 //    }
@@ -114,9 +114,9 @@ public class LoggingAspect {
 
 
 
-//    @Before("args(com.piyus.springBootAopPracticalDemo.dto.Student)" +
+//    @Before("args(com.piyus.springBootAopPointCuts.dto.Student)" +
 //    "&&" +
-//    "within(com.piyus.springBootAopPracticalDemo.service..*)")
+//    "within(com.piyus.springBootAopPointCuts.service..*)")
 //    public void logAfterReturning6(ProceedingJoinPoint joinPoint) throws Throwable{
 //        System.out.println("Method Intercepted");
 //    }
@@ -124,7 +124,7 @@ public class LoggingAspect {
 
     @Before("@args(jdk.jfr.Timestamp)" +
             "&&" +
-            "within(com.piyus.springBootAopPracticalDemo.service..*)")
+            "within(com.piyus.springBootAopPointCuts.service..*)")
     public void logAfterReturning7(ProceedingJoinPoint pjp) throws Throwable{
         System.out.println("Method Intercepted");
     }
@@ -135,12 +135,12 @@ public class LoggingAspect {
     //target works at class level in which it takes classPath with classname
     // and @target also works at class level based on annotation and it takes
     // path of that annotation with annotation name which is applied on that class
-    @Before("target(com.piyus.springBootAopPracticalDemo.service.StudentService)")
+    @Before("target(com.piyus.springBootAopPointCuts.service.StudentService)")
     public void logAfterReturning8(ProceedingJoinPoint pjp) throws Throwable{
         System.out.println("Method Intercepted");
     }
 
-    @Before("this(com.piyus.springBootAopPracticalDemo.service.StudentService)")
+    @Before("this(com.piyus.springBootAopPointCuts.service.StudentService)")
     public void logAfterReturning9(ProceedingJoinPoint pjp) throws Throwable{
         System.out.println("Method Intercepted");
     }

@@ -1,6 +1,6 @@
-package com.piyus.springBootAopPracticalDemo.service;
+package com.piyus.springBootAopPointCuts.service;
 
-import com.piyus.springBootAopPracticalDemo.dto.Student;
+import com.piyus.springBootAopPointCuts.dto.Student;
 
 public interface StudentServiceIterface {
     Student createStudent(Student student);
