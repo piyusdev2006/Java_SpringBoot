@@ -11,7 +11,7 @@ public class StudnetRepository {
 
     String url = "jdbc:mysql://localhost:3306/student_jdbc_db";
     String user = "root";
-    String password = "Mysql_2027";
+    String password = "";
 
     private Student mapRow(ResultSet resultSet) throws SQLException {
 
