@@ -29,5 +29,5 @@ public class StudentRepository {
         entityManager.remove(student);
     }
 
-    //update
+    //update - hibernate has no such methods of update
 }

@@ -1,4 +1,4 @@
-package com.piyus.JavaHibernatePractical;
+package com.piyus.JavaHibernateInternals;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
