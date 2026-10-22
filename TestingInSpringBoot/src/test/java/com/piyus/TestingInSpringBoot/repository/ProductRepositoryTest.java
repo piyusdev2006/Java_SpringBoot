@@ -1,0 +1,7 @@
+package com.piyus.TestingInSpringBoot.repository;
+
+import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
+
+@DataJpaTest
+public class ProductRepositoryTest {
+}
